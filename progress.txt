@@ -1,30 +1,7 @@
-> ssh bandit0@bandit.labs.overthewire.org -p 2220
-
-> cat readme
-
-copy password ZjLjTmM6FvvyRnrb2rfNWOZOTa6ip5If
-
-> ssh bandit1@bandit.labs.overthewire.orb -p 2220
-
-reading dash file
-
-> cat ./- 
-
-copy password 263JGJPfgU6LtdEvgfWU1XP5yac29mFx
-
-> ssh bandit2@bandit.labs.overthewire.orb -p 2220
-
-> cat "./--spaces in this filename--"
-
-copy password MNk8KNH3Usiio41PRUEoDFPqfxLPlSmx
-
-> ssh bandit3@bandit.labs.overthewire.orb -p 2220
-
-copy password 2WmrDFRmJIq3IPxneAaMGhap0pFhF3NJ
-
-from now on, use this format => [<user> => <password> => <lesson-learned>]
-meaning we got <password> from ssh as user <user>
-
+bandit0 => ZjLjTmM6FvvyRnrb2rfNWOZOTa6ip5If => ssh bandit0@bandit.labs.overthewire.org -p 2220 > cat readme
+bandit1 => 263JGJPfgU6LtdEvgfWU1XP5yac29mFx => reading dash file > cat ./- 
+bandit2 => MNk8KNH3Usiio41PRUEoDFPqfxLPlSmx => cat "./--spaces in this filename--"
+bandit3 => 2WmrDFRmJIq3IPxneAaMGhap0pFhF3NJ
 bandit4 => 4oQYVPkxZOOEOO5pTW81FB8j8lxXGUQw
 bandit5 => HWasnPhtq9AVKe0dmk45nxy20cvUa6EG => du -a -b (estimate all file space/storage usage in byte)
 bandit6 => morbNTDkSW6jIlUc0ymOdMaLnOlFVAaj => hard for me, find / -user bandit7 -group bandit6 -type f  -exec du -sh {}  \; (and then one of them said 4k, other said permission denied)
