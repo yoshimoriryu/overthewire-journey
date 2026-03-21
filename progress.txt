@@ -20,3 +20,24 @@ bandit17 => x2gLTTjFwMOhQ8oWNbMN362QKxfRqGlO => login with private sshkey: `chmo
 changed line: BMIOFKM7CRSLI97voLp3TD80NAq5exxk
 bandit18 => cGWpMaKXVwDUNgPAVJbWYuGHVn9zl3j8 => pretty simple, use ssh bandit18@<ip> -p 2220 "cat readme"
 bandit19 => 0qXahG8ZjOVMN9Ghs7iOWsCfZyXOUbYO => lol, interesting, i missed the clue `execute`; howto: `./bandit20-do`, then it will tell you that you are able to "use" bandit20 user privilege, use it to `cat` the password; full command: `./bandit20-do cat /etc/bandit_pass/bandit20`
+bandit20 => EeoULMCra2q0dSkYj561DX7s1CpBuOBt => monka hard, instruction is not intuitive enough for me, netcat can be use to scan or initiate a server (`-l` to listening needed, `-p` to specify port); TIL echo can use `-n` to prevent newline characters in the input
+ steps as follows:
+  1. echo -n '0qXahG8ZjOVMN9Ghs7iOWsCfZyXOUbYO' | nc -l -p 1234 &
+  2. ./suconnect 1234
+bandit21 => tRae0UfB9v0UzbCdn9cY0gQnds9GF58Q => we basicaly has to trace the cron job in order to see what its executed; `cat cronjob_bandit22`: got /usr/bin/cronjob_bandit22.sh; `cat /usr/bin/cronjob_bandit22.sh`, we see the script content and its said `cat /etc/bandit_pass/bandit22 > /tmp/t7O6lds9S0RqQh9aMcz6ShpAoZKF7fgv`, now we got leading that /tmp/<str> is where bandit22 pass is; simply `cat /tmp/<str>` and got the pass for next level
+bandit22 => 0Zf11ioIjMVN551jX3CmStKLYqjk54Ga => still the same, with a little bit of twist, just use whats written on script (pretty obvious for me)
+bandit23 => gb8KRRCsshuZXI0tUuR6ypOFjiZbf3G8 =>
+first ever shell script
+#!/bin/bash
+cat /etc/bandit_pass/bandit24 > /tmp/tmp.Z1SYKa27vS/password
+i read the solution :(
+my mistake is:
+1. not patient enough, try to read permission of folders and file
+2. utilize `mktemp -d`, we can rwx here
+3. foo is a dir, shouldve copy my script inside those (i try to copy it on the same level of foo)
+4. the cat script not work, use this instead
+#!/bin/bash
+mkdir -p /tmp/tmp.Z1SYKa27vS/$(cat /etc/bandit_pass/bandit24)
+i think its because of the write permission
+edit: yes, tried to `chmod 777 password`, it works
+
