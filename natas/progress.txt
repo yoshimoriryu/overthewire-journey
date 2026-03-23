@@ -1,0 +1,17 @@
+natas0 => simple web login
+natas0 => 0nzCigAq7t2iALyvU9xcHlYN4MlkIwlq => inspect element
+natas1 => TguMNxKo1DSa1tujBLuZJnDUlCcUAPlI => still solved by inspect elmt :/
+natas2 => 3gqisGdR0pjm6tpkDKdIWO2hSvchLeYH =>
+inspect element, we see `files/pixel.png`
+we found /files/ is available, append it to the url and it will open index of /files
+:<url>/files/
+there, there is users.txt which contain notes below,
+# username:password
+alice:BYNdCesZqW
+bob:jw2ueICLvT
+charlie:G5vCxkVV3m
+natas3:3gqisGdR0pjm6tpkDKdIWO2hSvchLeYH
+eve:zo4mJWyNj2
+mallory:9urtcpzBmH
+natas3 => natas4:QryZXc2e0zahULdHrtHxzyYkj59kUxLQ => /robots.txt 
+natas4 => 0n35PkggAPm2zbEpOU802c0x0Msn1ToK => referer header, idk what it means
