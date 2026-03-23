@@ -12,10 +12,10 @@ bandit9 => FGUW5ilLVJrxX9kMYMmlN4MgbpfMiqey => using `cat` then `grep -a` (force
 bandit10 => dtR173fZKb0RRsDFSGsg2RWnpNVj3qRr => using `base64 -d` to decode 
 bandit11 => 7x16WNeHIi5YkIhWsfFIqoognUTyj9Q4 => using tr `cat data.txt | tr 'A-Za-z' 'N-ZA-Mn-za-m'`
 bandit12 => FO5dwFsc0cbaIiH0h8J2eUks2vdTDwAn => hard for me, long ass unzip from various compressor like gzip, bzip2, tar, hex
-bandit13 => MU4VWeTyJk8ROof1qqmcBPaLh7lDCPvS => (new) hard for me, use scp (remote transfer file) to copy sshkey.private from bandit13 to local, then try to ssh with the private key, but before that: change the permission to read only for user (700)
+bandit13 => MU4VWeTyJk8ROof1qqmcBPaLh7lDCPvS => (new) hard for me, use scp (remote transfer file) to copy sshkey.private from bandit13 to local `scp -P 2220 <uname>@<remote>:/path-to-remote-file/ /path-to-local-dir/, then try to ssh with the private key, but before that: change the permission to read only for user (700)
 bandit14 => 8xCjnmgoKbGLhHFAZlGE5Tmu4M2tKJQo => (new) nmap, `nmap localhost` look for connection type on port 30000; then use `telnet localhost 30000`, enter current password, will get `correct!` message and next lv password
 bandit15 => kSkvUpMQ7lBYyCM4GBPvCvT1BfWRy0Dx => (new) openssl, use `openssl s_client -connect localhost:30001` then input password; somehow its still simple (for now)
-bandit16 => bandit17.sshkey.private => port scan with `nc -zv localhost 31000-32000 2>&1 | grep succeed`; openssl to 31790, TIL that openssl s_client receive pasted string as keystrokes, meaning the first letter 'k' in our key is considered "KEYUPDATE" by them, ignoring the rest of the string. To prevent this, use -quiet flag in s_client startup.
+bandit16 => bandit17.sshkey.private => port scan with `nc -zv localhost 31000-32000 2>&1 | grep succeed`; openssl to 31790, TIL that openssl s_client receive pasted string as keystrokes, meaning the first letter 'k' in our key is considered "KEYUPDATE" by them, ignoring the restiCi86ttT4KSNe1armKiwbQNmB3YJP3q4 of the string. To prevent this, use -quiet flag in s_client startup.
 bandit17 => x2gLTTjFwMOhQ8oWNbMN362QKxfRqGlO => login with private sshkey: `chmod 700 <key>`, then `ssh bandit17@<bandit-url> -p 2220 -i <key>`; then use `diff -u passwords.old passwords.new`;
 changed line: BMIOFKM7CRSLI97voLp3TD80NAq5exxk
 bandit18 => cGWpMaKXVwDUNgPAVJbWYuGHVn9zl3j8 => pretty simple, use ssh bandit18@<ip> -p 2220 "cat readme"
@@ -41,3 +41,9 @@ mkdir -p /tmp/tmp.Z1SYKa27vS/$(cat /etc/bandit_pass/bandit24)
 i think its because of the write permission
 edit: yes, tried to `chmod 777 password`, it works
 
+bandit24 => iCi86ttT4KSNe1armKiwbQNmB3YJP3q4 => see bandit24.sh, i google how to pipe and bash script syntaxes; tho i use AI answer :(
+keytakeaway: `done | nc localhost 30002 > res.txt` is opening a connection and stream the echo
+meanwhile: `response=$(echo "..." | nc localhost 30002)` (i tried to see which port is "true") is opening 10k independent tcp connection, which is abysmal
+
+bandit25 => s0773xxkk0MXfdqOfPRVr9L3jJBUOgCZ => idk i cheat; TIL i learn `more` and `vim` (`:e /etc/bandit\_pass/bandit26`) and (setting useful shell with vim: 1. `:set shell=/bin/bash` 2. `:shell`
+bandit26 => 
