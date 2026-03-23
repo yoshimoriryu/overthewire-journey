@@ -48,7 +48,9 @@ meanwhile: `response=$(echo "..." | nc localhost 30002)` (i tried to see which p
 bandit25 => s0773xxkk0MXfdqOfPRVr9L3jJBUOgCZ => idk i cheat; TIL i learn `more` and `vim` (`:e /etc/bandit\_pass/bandit26`) and (setting useful shell with vim: 1. `:set shell=/bin/bash` 2. `:shell`
 bandit26 => upsNCc7vzaRDx6oZC6GiR6ERwe1MowGB => like bandit19->20, use the script to execute as different use
 bandit27 => Yz9IpL0sBcCeuG7m9uQFt8ZNpS4HZRcN => ez just clone repo with port defined
-bandit28 => 4pT1t5DENaYuqnqvadYs1oE4QLCdjmJ7 => same as bandit27, cloning and readme, the catch is the password is at previous commit
-bandit29 => qp30ex3VLz5MDG1n91YowTv4Q8l7CDZL => same as bandit28, the catch is the password on another branch
-bandit30 => fb5S2xb7bRyFmAvQYQGEqsbhVyJqhnDy => same as bandit29, the catch is the password is in the tag; actualy TIL command line for tagging: > to create a tag: `git tag -a <tag_name> -m "<tag desc/message>"`, > to see more details `git show <tag_name>`, to list all tags (maybe): `git tag`
-bandit31 => => 
+bandit28 => 4pT1t5DENaYuqnqvadYs1oE4QLCdjmJ7 => same as bandit27 (git), cloning and readme, the catch is the password is at previous commit
+bandit29 => qp30ex3VLz5MDG1n91YowTv4Q8l7CDZL => same as bandit28 (git), the catch is the password on another branch
+bandit30 => fb5S2xb7bRyFmAvQYQGEqsbhVyJqhnDy => same as bandit29 (git), the catch is the password is in the tag; actualy TIL command line for tagging: > to create a tag: `git tag -a <tag_name> -m "<tag desc/message>"`, > to see more details `git show <tag_name>`, to list all tags (maybe): `git tag`
+bandit31 => 3O9RfhqyAlVBEZpVb6LYStshZoqoSx5K => same as bandit30 (git), TIL you can add the same file with -f flag (e.g. `git add -f <filename>`) then do normal commit and push
+bandit32 => tQdtbs5D5i2vJwkO8mEyYEyTL8izoeJ0 => somehow logged in as bandit33!? (cat /etc/bandit_pass/bandit33)
+bandit33 => => finish, for now
