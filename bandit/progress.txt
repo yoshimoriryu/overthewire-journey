@@ -54,3 +54,4 @@ bandit30 => fb5S2xb7bRyFmAvQYQGEqsbhVyJqhnDy => same as bandit29 (git), the catc
 bandit31 => 3O9RfhqyAlVBEZpVb6LYStshZoqoSx5K => same as bandit30 (git), TIL you can add the same file with -f flag (e.g. `git add -f <filename>`) then do normal commit and push
 bandit32 => tQdtbs5D5i2vJwkO8mEyYEyTL8izoeJ0 => somehow logged in as bandit33!? (cat /etc/bandit_pass/bandit33)
 bandit33 => => finish, for now
+TODO: translate this to hint journey instead of exposing step by step

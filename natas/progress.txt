@@ -15,3 +15,8 @@ eve:zo4mJWyNj2
 mallory:9urtcpzBmH
 natas3 => natas4:QryZXc2e0zahULdHrtHxzyYkj59kUxLQ => /robots.txt 
 natas4 => 0n35PkggAPm2zbEpOU802c0x0Msn1ToK => referer header, idk what it means
+natas5 => 0RoJwHdSKWFTYR5WuiAewauSuNaBXned => lol, found the cookies but failed to perceive that i need to change the value from 0 to 1
+natas6 => bmg8SvU1LizuWjx3y7xkNERkHxGre0GS => just open /includes/secret.inc :/
+natas7 => xcoXLmzMkoIP9D7hlgPlh9XD7OgLAe5Q => theres hint in home
+natas8 => ZE1ck82lmdGIoErlhQgWND6j2Wzz6b6t => function told us that provided encoded==bin2hex(strrev(base64_encode($secret)))) it means to reverse we have to reverse bin2hex, reverse rev, and decode base64, which can be achieved with echo "3d3d516343746d4d6d6c315669563362" | xxd -p -r | rev | base64 -d
+natas9 =>
